@@ -30,8 +30,6 @@ public class Categoryproduct {
 	@Column(name = "Categoryname")
 	private String Categoryname;
 
-	
-
 	public String getCategoryname() {
 		return Categoryname;
 	}
@@ -39,10 +37,6 @@ public class Categoryproduct {
 	public void setCategoryname(String categoryname) {
 		Categoryname = categoryname;
 	}
-
-	
-
-
 
 	public Categoryproduct(@NotBlank(message = "Fill name") String categoryname) {
 		super();

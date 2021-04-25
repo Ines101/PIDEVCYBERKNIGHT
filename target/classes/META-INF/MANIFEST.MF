@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: pidev
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Heni
+Built-By: kinga
 Implementation-Vendor-Id: cyberknight
 Build-Jdk: 1.8.0_281
 Implementation-URL: https://spring.io/projects/spring-boot/pidev
