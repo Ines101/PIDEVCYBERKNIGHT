@@ -65,18 +65,19 @@ public class EventServiceImpl implements IEventService  {
 //		Event event= eventRepository.findById((long)id_e).orElse(null);
 //		user admin= adminRepository.findById((long)id_u).orElse(null);
 //		event.setAdmin(admin);
+		return null;
 //		 eventRepository.save(event);
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String username = "";
-		if (principal instanceof UserDetails) {
-			username = ((UserDetails) principal).getUsername();
-		} else {
-			username = principal.toString();
-		}
-		Optional<user> opUser = adminRepository.findByUsername(username);
-		opUser.orElseThrow(() -> new TokenException("User not found"));
-		user user = new user();
-		return user = opUser.get();
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		String username = "";
+//		if (principal instanceof UserDetails) {
+//			username = ((UserDetails) principal).getUsername();
+//		} else {
+//			username = principal.toString();
+//		}
+//		Optional<user> opUser = adminRepository.findByUsername(username);
+//		opUser.orElseThrow(() -> new TokenException("User not found"));
+//		user user = new user();
+//		return user = opUser.get();
 		
 		
 		

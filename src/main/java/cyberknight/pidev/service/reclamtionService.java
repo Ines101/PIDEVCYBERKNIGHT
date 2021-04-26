@@ -71,18 +71,19 @@ public class reclamtionService {
 	}
 
 	public List<reclamation> getAllReclamations() {
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String username = "";
-		if (principal instanceof UserDetails) {
-			username = ((UserDetails) principal).getUsername();
-		} else {
-			username = principal.toString();
-		}
-		Optional<user> opUser = userRepository.findByUsername(username);
-		opUser.orElseThrow(() -> new TokenException("User not found"));
-		user user = new user();
-		user = opUser.get();
-		return reclamationRepository.findAllByuser(user);
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		String username = "";
+//		if (principal instanceof UserDetails) {
+//			username = ((UserDetails) principal).getUsername();
+//		} else {
+//			username = principal.toString();
+//		}
+//		Optional<user> opUser = userRepository.findByUsername(username);
+//		opUser.orElseThrow(() -> new TokenException("User not found"));
+//		user user = new user();
+//		user = opUser.get();
+//		return reclamationRepository.findAllByuser(user);
+		return reclamationRepository.findAll();
 	}
 	public List<reclamation> fetchBySubject(reclamationRequest reclamationRequest)
 	{
