@@ -34,39 +34,41 @@ public class AdsService {
 
 	@Transactional
 	public boolean addAds(Ads ads) {
-		String username = "";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			username = ((UserDetails) principal).getUsername();
-			//System.out.println(username);
-		} else {
-			username = principal.toString();
-			//System.out.println(username);
-		}
-		//System.out.println(ads.getUser());
-		Optional<user> opUser = userRepository.findByUsername(username);
-		//System.out.println(username);
-		opUser.orElseThrow(() -> new TokenException("User not found"));
-		user user = new user();
-		user = opUser.get();
-		ads.setUser(user);
+//		String username = "";
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		if (principal instanceof UserDetails) {
+//			username = ((UserDetails) principal).getUsername();
+//			//System.out.println(username);
+//		} else {
+//			username = principal.toString();
+//			//System.out.println(username);
+//		}
+//		//System.out.println(ads.getUser());
+//		Optional<user> opUser = userRepository.findByUsername(username);
+//		//System.out.println(username);
+//		opUser.orElseThrow(() -> new TokenException("User not found"));
+//		user user = new user();
+//		user = opUser.get();
+//		ads.setUser(user);
+		ads.setUser(null);
 		return AdsRepository.save(ads) != null;
 	}
 
 	@Transactional
 	public boolean updateAds(Ads ads) {
-		String username = "";
-		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if (principal instanceof UserDetails) {
-			username = ((UserDetails) principal).getUsername();
-		} else {
-			username = principal.toString();
-		}
-		Optional<user> opUser = userRepository.findByUsername(username);
-		opUser.orElseThrow(() -> new TokenException("User not found"));
-		user user = new user();
-		user = opUser.get();
-		ads.setUser(user);
+//		String username = "";
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		if (principal instanceof UserDetails) {
+//			username = ((UserDetails) principal).getUsername();
+//		} else {
+//			username = principal.toString();
+//		}
+//		Optional<user> opUser = userRepository.findByUsername(username);
+//		opUser.orElseThrow(() -> new TokenException("User not found"));
+//		user user = new user();
+//		user = opUser.get();
+//		ads.setUser(user);
+		ads.setUser(null);
 		return AdsRepository.save(ads) != null;
 	}
 
